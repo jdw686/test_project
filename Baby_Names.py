@@ -19,7 +19,8 @@ def last_letter(names_1):
 
 df['Name First Letter'] = df['Name'].apply(first_letter)
 df['Name Last Letter'] = df['Name'].apply(last_letter)
-df['E-Occurrences'] = df['Name'].str.count('e')
+lower_case = df['Name'].str.lower()
+df['E-Occurrences'] = lower_case.str.count('e')
 
 # My favorite plot
 import matplotlib.pyplot as plt
